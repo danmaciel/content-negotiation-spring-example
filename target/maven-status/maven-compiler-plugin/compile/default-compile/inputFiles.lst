@@ -1,0 +1,11 @@
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/controller/ProdutoController.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/exception/ErrorResponse.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/repository/ProdutoRepository.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/ProdutoApiApplication.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/service/ProdutoService.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/config/ContentNegotiationConfig.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/exception/GlobalExceptionHandler.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/model/Produto.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/exception/ProdutoNaoEncontradoException.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/config/OpenApiConfig.java
+/home/dan/projetos/testes_openCode/teste1/src/main/java/com/example/produtoapi/dto/ProdutoDTO.java

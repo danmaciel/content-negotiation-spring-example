@@ -1,0 +1,297 @@
+{
+  "info": {
+    "name": "Produto API - Content Negotiation",
+    "description": "Coleção de exemplos para testar Content Negotiation com JSON, XML e YAML",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080",
+      "type": "string"
+    },
+    {
+      "key": "apiPath",
+      "value": "/api/produtos",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Listar Todos",
+      "item": [
+        {
+          "name": "Listar Todos (JSON)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}"]
+            }
+          }
+        },
+        {
+          "name": "Listar Todos (XML)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}"]
+            }
+          }
+        },
+        {
+          "name": "Listar Todos (YAML)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-yaml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Criar Produto",
+      "item": [
+        {
+          "name": "Criar Produto (JSON)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nome\": \"Produto Exemplo\",\n  \"descricao\": \"Descrição do produto\",\n  \"preco\": 99.99,\n  \"quantidadeEstoque\": 10\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}"]
+            }
+          }
+        },
+        {
+          "name": "Criar Produto (XML)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<ProdutoDTO>\n  <nome>Produto Exemplo</nome>\n  <descricao>Descrição do produto</descricao>\n  <preco>99.99</preco>\n  <quantidadeEstoque>10</quantidadeEstoque>\n</ProdutoDTO>"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}"]
+            }
+          }
+        },
+        {
+          "name": "Criar Produto (YAML)",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-yaml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/x-yaml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "nome: Produto Exemplo\ndescricao: Descrição do produto\npreco: 99.99\nquantidadeEstoque: 10"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Buscar por ID",
+      "item": [
+        {
+          "name": "Buscar por ID 1 (YAML)",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/x-yaml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Atualizar Produto",
+      "item": [
+        {
+          "name": "Atualizar Produto 1 (JSON)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"nome\": \"Produto Atualizado\",\n  \"descricao\": \"Descrição atualizada\",\n  \"preco\": 199.99,\n  \"quantidadeEstoque\": 20\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}", "1"]
+            }
+          }
+        },
+        {
+          "name": "Atualizar Produto 1 (XML)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/xml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "<ProdutoDTO>\n  <id>1</id>\n  <nome>Produto Atualizado</nome>\n  <descricao>Descrição atualizada</descricao>\n  <preco>199.99</preco>\n  <quantidadeEstoque>20</quantidadeEstoque>\n</ProdutoDTO>"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}", "1"]
+            }
+          }
+        },
+        {
+          "name": "Atualizar Produto 1 (YAML)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-yaml"
+              },
+              {
+                "key": "Accept",
+                "value": "application/x-yaml"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "id: 1\nnome: Produto Atualizado\ndescricao: Descrição atualizada\npreco: 199.99\nquantidadeEstoque: 20"
+            },
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Deletar Produto",
+      "item": [
+        {
+          "name": "Deletar Produto 1",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Contar Registros",
+      "item": [
+        {
+          "name": "Contar Registros",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}{{apiPath}}/count",
+              "host": ["{{baseUrl}}"],
+              "path": ["{{apiPath}}", "count"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
